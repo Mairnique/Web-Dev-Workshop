@@ -15,9 +15,10 @@ def contact(request):
             new_contact = Contact(
                 name=form.cleaned_data["name"],
                 email=form.cleaned_data["email"],
-                contact=form.cleaned_data["contact"]
+                content=form.cleaned_data["content"]
                 )
             new_contact.save()
+            return render(request, 'index.html') 
     else:
         form = ContactForm()
     return render(request, 'contact.html', context={"form":form})

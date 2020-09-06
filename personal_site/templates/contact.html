@@ -3,10 +3,10 @@
 {% load static %}
 
 {% block main %}
-    <form>
+    <form method="post">
         {% csrf_token %}
-        {{ form }}
-        <input type="submit" name="Save">
+        {{ form.as_p }}
+        <input type="submit" value="Submit" name="Save">
     </form>
 {% endblock %}
 
